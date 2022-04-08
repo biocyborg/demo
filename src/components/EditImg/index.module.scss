@@ -1,0 +1,20 @@
+:global {
+  .tui-image-editor-header-logo {
+    display: none;
+  }
+
+  .tui-colorpicker-clearfix {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
+  .tui-colorpicker-clearfix li input {
+    background: sandybrown;
+    width: 15px;
+    height: 15px;
+  }
+
+  .tui-image-editor-header-buttons {
+    display: none;
+  }
+}

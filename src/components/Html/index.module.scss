@@ -1,0 +1,16 @@
+.display {
+  width: 200px;
+  border: 1px solid saddlebrown;
+  display: flex;
+  flex-wrap: wrap;
+  .flex {
+    flex: 1;
+    .over {
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+    }
+  }
+}
