@@ -8,6 +8,7 @@ var cacheList=[
 ]
 
 self.addEventListener('install', e => {
+  console.log(e)
   e.waitUntil(
     caches.open(cacheStorageKey)
     .then(cache => cache.addAll(cacheList))
@@ -15,9 +16,11 @@ self.addEventListener('install', e => {
   )
 })
 
-self.addEventListener('fetch',function(e){
+self.addEventListener('fetch', function (e) {
+  console.log(e)
+  console.log(localStorage.getItem('token'))
   e.respondWith(
-    caches.match(e.request).then(function(response){
+    caches.match(e.request).then(function (response) {
       if(response != null){
         return response
       }
@@ -26,7 +29,26 @@ self.addEventListener('fetch',function(e){
   )
 })
 
-self.addEventListener('activate',function(e){
+// self.addEventListener('fetch', event => {
+//     event.respondWith(
+//         caches.match(event.request)
+//             .then(res => {
+//                 //1. 如果请求的资源已被缓存，则直接返回
+//                 if (res) return res;
+//                 //2. 没有，则发起请求并缓存结果
+//                 let requestClone = event.request.clone();
+//                 return fetch(requestClone).then(netRes => {
+//                     if(!netRes || netRes.status !== 200) return netRes;
+//                     let responseClone = netRes.clone();
+//                     caches.open(cacheName).then(cache => cache.put(requestClone, responseClone));
+//                     return netRes;
+//                 });
+//             })
+//     );
+// });
+
+self.addEventListener('activate', function (e) {
+  console.log(e)
   e.waitUntil(
     //获取所有cache名称
     caches.keys().then(cacheNames => {

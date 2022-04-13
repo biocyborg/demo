@@ -2,6 +2,14 @@ const CracoLessPlugin = require('craco-less');
 
 const theme = require('./theme');
 
+if (process.env.NODE_ENV === 'development') {
+  // 区分测试和生产环境，cra 的环境变量无法满足
+  // eslint-disable-next-line
+  require('dotenv').config({
+    path: `.env`,
+  });
+}
+
 module.exports = {
   webpack: {
     resolve: {

@@ -5,16 +5,24 @@ const defalutState = {
     b: '456',
     c: '789',
   },
+  WooApi: {},
 };
 
 const haha = (state = defalutState, action) => {
-  console.log(action);
   const { type, value } = action;
   switch (type) {
     case 'change_input':
       return {
         ...state,
         inputValue: value,
+      };
+    case 'setWooApi':
+      return {
+        ...state,
+        WooApi: {
+          ...state.WooApi,
+          ...value,
+        },
       };
     default:
       break;

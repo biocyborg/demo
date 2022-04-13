@@ -11,6 +11,7 @@ import DSers from './components/DSers';
 import EmailEditor from './components/EmailEditor';
 import WebWorker from './components/WebWorker';
 import ServiceWorker from './components/ServiceWorker';
+import Woocommerce from './components/Woocommerce';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route key="EmailEditor" path="/EmailEditor" element={<EmailEditor />} />
         <Route key="WebWorker" path="/WebWorker" element={<WebWorker />} />
         <Route key="ServiceWorker" path="/ServiceWorker" element={<ServiceWorker />} />
+        <Route key="Woocommerce" path="/Woocommerce" element={<Woocommerce />} />
         <Route path="/" element={<Navigate replace to="/editImg" />} />
       </Routes>
     </>

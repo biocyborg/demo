@@ -36,6 +36,9 @@ const Menu = () => {
         <Button variant="contained" onClick={() => navigate('/ServiceWorker')}>
           ServiceWorker
         </Button>
+        <Button variant="contained" onClick={() => navigate('/Woocommerce')}>
+          Woocommerce
+        </Button>
       </div>
     </>
   );

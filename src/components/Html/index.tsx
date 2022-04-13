@@ -10,7 +10,7 @@ import WooApi from '../../WooAPI/RestApi';
 import { DefinedRetrieve } from '../../WooAPI/Func/index';
 import { URLOrder } from '../../WooAPI/Orders/API';
 
-import { DefineXMLHttpRequestGET } from '../../DSers/DS_Interact_Woo';
+import { DefineXMLHttpRequestGET } from '../../DSers/Core';
 
 import jsonBigint from 'json-bigint';
 import { BigInteger } from 'jsbn';
@@ -206,7 +206,6 @@ const Html = ({ inputValue, inputChange }: AppProps) => {
   function sendMessage() {
     const laserExtensionId = 'jnoblhkfklnjkhamdealalpgkdehdhkl';
     const { chrome } = window;
-    console.log(chrome);
     // Make a simple request:
     chrome.runtime.sendMessage(laserExtensionId, { getTargetData: true }, function (response: any) {
       console.log(response);
