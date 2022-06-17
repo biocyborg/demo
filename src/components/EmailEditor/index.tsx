@@ -4,20 +4,19 @@ import styles from 'index.module.scss';
 
 import EmailEditor from 'react-email-editor';
 
+interface test {
+  editor: {
+    exportHtml(callbackfn: (data: { html: string }) => void): void;
+  };
+}
+
 const Email_Editor = () => {
-  const emailEditorRef = useRef(null);
+  const emailEditorRef = useRef<test>();
 
   const exportHtml = () => {
-    console.log(emailEditorRef.current);
-    // const {
-    //   current: {
-    //     editor: { exportHtml },
-    //   },
-    // } = emailEditorRef;
-    // exportHtml((data: { design: any; html: any }) => {
-    //   const { design, html } = data;
-    //   console.log('exportHtml', html);
-    // });
+    emailEditorRef?.current?.editor.exportHtml((data) => {
+      console.log('234', data);
+    });
   };
 
   const onLoad = () => {

@@ -34,7 +34,7 @@ const Woocommerce = ({ WooApi, setWooApi }: AppProps) => {
       setWooApi(a[i].store_id, result);
     }
 
-    // worker();
+    worker();
   };
 
   const push = async () => {

@@ -10,13 +10,9 @@ import { ApiKey } from '../config';
  */
 export async function getApiKey(domain, storeId) {
   try {
-    const result = await DefineXMLHttpRequestGET(`${await updateDomain(domain)}${ApiKey}${storeId}`, {
-      options: {
-        wooid: '',
-      },
-    });
+    const result = await DefineXMLHttpRequestGET(`${await updateDomain(domain)}${ApiKey}${storeId}`);
     if (result.code === 2000) {
-      const { domain, key, secret, store_id } = result.data;
+      const { domain, key, secret } = result.data;
       return WooApi(domain, key, secret);
     }
   } catch (error) {

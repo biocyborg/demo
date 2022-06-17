@@ -39,16 +39,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script>
-      // 检测浏览器是否支持SW
-      if(navigator.serviceWorker != null){
-        navigator.serviceWorker.register('%PUBLIC_URL%/sw.js')
-        .then(function(registartion){
-          console.log('支持sw:',registartion.scope)
-        })
-      }else{
-          console.log('不支持SW:')
-      }
-  </script>
+
   </body>
 </html>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button, Divider } from '@mui/material';
 
@@ -31,6 +31,66 @@ const Html = ({ inputValue, inputChange }: AppProps) => {
   const [asd, setAsd] = useState<string>('');
   const [state, setState] = useState<number>(2);
   const [over, setOver] = useState<string>('test');
+
+  const [aa, setAa] = useState<string>('');
+  const [bb, setBb] = useState<string>('');
+  const [cc, setCc] = useState<string>('');
+
+  useEffect(() => {
+    //     console.log('234');
+    //     const testRoot = document.getElementById('testRoot');
+    //     const testContent = document.getElementById('testContent');
+    //     const testR = `<div id='testRoot'></div>`;
+    //     const html = `<div id='aaa'
+    //                 style="font-family: Open Sans, Helvetica, Tahoma, Arial, sans-serif; margin: 30px auto 15px; max-width: 560px;">
+    //                 <table style="border-collapse: collapse; width: 100%;" align="center" border="0" cellpadding="0"
+    //                   cellspacing="0">
+    //                   <tbody>
+    //                     <tr>
+    //                       <td
+    //                         style="border-collapse: collapse; font-family: Open Sans, Helvetica, Tahoma, Arial, sans-serif; direction: ltr; font-size: 0px; padding: 0px;"
+    //                         align="center">
+    //                         <div
+    //                           style="font-family: Open Sans, Helvetica, Tahoma, Arial, sans-serif; font-size: 0px; text-align: left; direction: ltr; display: inline-block; vertical-align: top; width: 100%;">
+    //                           <table border="0" cellpadding="0" cellspacing="0"
+    //                             style="border-collapse: collapse; width: 100%;">
+    //                             <tbody>
+    //                               <tr>
+    //                                 <td
+    //                                   style="border-collapse: collapse; font-family: Open Sans, Helvetica, Tahoma, Arial, sans-serif; "
+    //                                   valign="top">
+    //                                   <table border="0" cellpadding="0" cellspacing="0"
+    //                                     style="border-collapse: collapse; width: 100%;">
+    //                                     <tbody>
+    //                                       <tr>
+    //                                         <td>
+    //                                           <div style="padding: 10px; font-size: 16px;">
+    //                                             ${bb} <a id="domain"
+    //                                               style="color: #FE9024; text-decoration: none;"
+    //                                               href="domain_url">${aa}</a>!
+    // ${cc}
+    //                                             <a href="{{ $track.TrackingUrl }}" target="_blank"
+    //                                               value="{{ $track.TrackingUrl }}"
+    //                                               style="color: #fe8f24; text-decoration: none; font-size: 14px; width: 100px;">Track</a>
+    //                                           </div>
+    //                                         </td>
+    //                                       </tr>
+    //                                     </tbody>
+    //                                   </table>
+    //                                 </td>
+    //                               </tr>
+    //                             </tbody>
+    //                           </table>
+    //                         </div>
+    //                       </td>
+    //                     </tr>
+    //                   </tbody>
+    //                 </table>
+    //                 <div style="clear: both"></div>
+    //                 <div style="clear: both;"></div>
+    //               </div>`;
+    // idd?.insertAdjacentHTML('afterbegin', html);
+  }, [aa, bb, cc]);
 
   async function indexedDB() {
     let db: any;
@@ -273,6 +333,10 @@ const Html = ({ inputValue, inputChange }: AppProps) => {
         sendMessage
       </Button>
       <Divider />
+      <div id="idd" />
+      <input type="text" onChange={(e) => setAa(e.target.value)} />
+      <input type="text" onChange={(e) => setBb(e.target.value)} />
+      <input type="text" onChange={(e) => setCc(e.target.value)} />
     </>
   );
 };
